@@ -26,7 +26,7 @@ This repository contains my personalized Neovim configuration.
 
 - **null-ls.nvim**: Integrates external tools for code actions, diagnostics, formatting, hover, and completions.
 
-- **lualine.nvim**: Configures a status line at the bottom of Neovim.
+- **lualine.nvim**: Configures the status line at the bottom of Neovim.
 
 - **nvim-treesitter**: Provides syntax highlighting and code parsing based on Treesitter.
 
@@ -44,17 +44,18 @@ Before setting up the configuration, ensure you have the following dependencies 
    ```bash
    sudo apt install neovim
    
-2. **Install a C compiler (any)**
+2. **Get some dependencies**
    ```bash
+   # install ripgrep (telescope dependency (i think))
+   sudo apt install ripgrep
+   # install any c compiler. here we're installing gcc and its dependencies
    sudo apt install build-essential
+   # For enhanced telescope (optional):
+   sudo apt install fd-find
 
-3. **Install fd-find (for enhanced telescope)**
-   ```bash
-    sudo apt install fd-find
+3. **Clone this repo**
 
-4. **Clone this repo**
-   
-   This repository should be cloned under
+   Default neovim config location is
    ```bash
    ~/.config/nvim
 
