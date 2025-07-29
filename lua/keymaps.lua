@@ -21,4 +21,5 @@ vim.keymap.set("n", "<leader>ft", vim.lsp.buf.format, {})
 vim.keymap.set("n", "<leader>/", "gcc", { remap = true })
 
 -- Terminal
-vim.keymap.set("n", "<leader>tr", ":ToggleTerm<CR>")
+vim.keymap.set("n", "<leader>tr", ":ToggleTerm direction=float<CR>")
+vim.keymap.set("t", "<esc>", "<C-\\><C-n>:ToggleTerm direction=float<CR>")
