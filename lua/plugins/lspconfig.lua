@@ -26,7 +26,6 @@ return {
 			})
 
 			lspconfig.gopls.setup({})
-
 			lspconfig.jsonls.setup({})
 		end,
 	},

@@ -15,6 +15,8 @@ vim.keymap.set("n", "<leader>fw", ":Telescope live_grep<CR>")
 vim.keymap.set("n", "<leader>fb", ":Telescope buffers<CR>")
 vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>")
 vim.keymap.set("n", "<leader>fs", ":Telescope lsp_document_symbols<CR>")
+vim.keymap.set("n", "gd", ":Telescope lsp_definitions<CR>")
+vim.keymap.set("n", "gr", ":Telescope lsp_references<CR>")
 
 -- Code formatting
 vim.keymap.set("n", "<leader>ft", vim.lsp.buf.format, {})
@@ -23,3 +25,6 @@ vim.keymap.set("n", "<leader>/", "gcc", { remap = true })
 -- Terminal
 vim.keymap.set("n", "<leader>tr", ":ToggleTerm direction=float<CR>")
 vim.keymap.set("t", "<esc>", "<C-\\><C-n>:ToggleTerm direction=float<CR>")
+
+-- Rest.Nvim
+vim.keymap.set("n", "<leader>rr", ":Rest run<CR>")

@@ -28,7 +28,6 @@ vim.list_extend(
 		"\n"
 	)
 )
-
 local config = {
 	cmd = {
 		"java",
@@ -65,7 +64,7 @@ local config = {
 				runtimes = {
 					{
 						name = "JavaSE-21",
-						path = "/usr/lib/jvm/java-21-openjdk-amd64/",
+						path = "/.sdkman/candidates/java/current/",
 					},
 				},
 			},
