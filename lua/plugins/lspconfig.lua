@@ -27,6 +27,7 @@ return {
 
 			lspconfig.gopls.setup({})
 			lspconfig.jsonls.setup({})
+            lspconfig.ltex.setup({})
 		end,
 	},
 
