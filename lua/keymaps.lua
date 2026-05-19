@@ -1,24 +1,24 @@
-vim.cmd("let mapleader = ' '")
+vim.g.mapleader = " "
 
--- File Explorer
-vim.keymap.set("n", "<leader>e", ":Neotree filesystem reveal left toggle<CR>")
-vim.keymap.set("n", "<leader><S-e>", ":Neotree focus<CR>")
+vim.keymap.set("x", "p", [["_dP]], { desc = "Paste over selection without losing yanked text" })
+vim.keymap.set({ "n", "v" }, "<leader>d", [["+d]], { desc = "Delete without yanking" })
 
--- Buffer control
-vim.keymap.set("n", "<tab>", ":BufferNext<CR>")
-vim.keymap.set("n", "<S-tab>", ":BufferPrevious<CR>")
-vim.keymap.set("n", "<leader>x", ":BufferClose<CR>")
+vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
--- Telescope
-vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>")
-vim.keymap.set("n", "<leader>fw", ":Telescope live_grep<CR>")
-vim.keymap.set("n", "<leader>fb", ":Telescope buffers<CR>")
-vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>")
-vim.keymap.set("n", "<leader>fs", ":Telescope lsp_document_symbols<CR>")
+-- window management
+vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
+vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window vertically" })
+vim.keymap.set("n", "<leader>se", "<C-w>=", { desc = "Split window vertically" })
+vim.keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Split window vertically" })
 
--- Code formatting
-vim.keymap.set("n", "<leader>ft", vim.lsp.buf.format, {})
-vim.keymap.set("n", "<leader>/", "gcc", { remap = true })
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "move lines down in visual selection" })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "move lines up in visual selection" })
 
--- Terminal
-vim.keymap.set("n", "<leader>tr", ":ToggleTerm<CR>")
+vim.keymap.set("v", "<", "<gv", { desc = "unindent and keep selection" })
+vim.keymap.set("v", ">", ">gv", { desc = "Indent and keep selection" })
+
+
+vim.keymap.set("n", "<leader>u", function()
+  vim.cmd.packadd("nvim.undotree")
+  require("undotree").open()
+end, { desc = "Toggle builtin undotree" })
