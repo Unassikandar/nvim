@@ -110,6 +110,10 @@ require('nvim-tree').setup({
       },
     },
   },
+  update_focused_file = {
+    enable = true,
+    update_root = false,
+  },
   filters = {
     custom = { ".DS_Store" }
   },
@@ -122,6 +126,7 @@ vim.keymap.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle fi
 vim.keymap.set("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer on current file" })
 vim.keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse file explorer" })
 vim.keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" })
+vim.keymap.set("n", "<leader>eE", "<cmd>NvimTreeFocus<CR>", { desc = "Focus file explorer"})
 
 ------------------------------------------------------------------------------------------------------------------------
 -- WHICH-KEY
@@ -269,12 +274,11 @@ vim.lsp.config("lua_ls", {
     },
   },
 })
-vim.lsp.enable({ "lua_ls" })
+vim.lsp.enable({ "lua_ls", "gopls" })
 
 vim.diagnostic.config({
   virtual_text = true,
 })
-
 
 vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "go to definition" })
 vim.keymap.set("n", "<leader>ft", vim.lsp.buf.format, { desc = "format local buffer" })
